@@ -29,8 +29,8 @@ form.container {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 70vw;
-    max-width: 500px;
-    min-width: 450px;
+    max-width: 450px;
+    min-width: 300px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     height: 95vh;
     border-radius: 10px;
@@ -49,11 +49,10 @@ form.container {
 }
 
 .log_info .img {
-    width: 90px;
-    height: 90px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     background-image: url('../img/main.png');
-    /* background-color: var(--main); */
 }
 
 .log_info .img img {
@@ -65,7 +64,7 @@ form.container {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: 600;
-    font-size: 2em;
+    font-size: 1.7em;
 }
 
 .log_info h3 {
@@ -125,7 +124,7 @@ form.container {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    width: 40%;
+    width: 55%;
     gap: 5px;
 }
 
@@ -136,10 +135,9 @@ form.container {
     margin-bottom: 0;
 }
 
-.log_info .check label {
-    display:  inline-block;
+.check_container a {
+    font-size: .9em;
 }
-
 .log_info button,
 .log_info #connect {
     display: block;
@@ -172,4 +170,22 @@ form.container {
 
 #connect img {
     width: 20px;
+}
+
+
+
+
+
+
+
+.log_info p {
+    font-size: .9em;
+}
+
+/* responsive */
+@media screen and (max-width: 400px) {
+    form.container {
+        width: 100vw;
+        box-shadow: none;
+    }
 }
