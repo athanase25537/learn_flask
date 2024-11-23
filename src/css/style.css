@@ -143,7 +143,7 @@ form.container {
     display: block;
     width: 100%;
     padding: 13px;
-    border-radius: 20px;
+    border-radius: 100px;
     border: none;
     text-align: center;
 }
@@ -151,6 +151,12 @@ form.container {
 .log_info button {
     background-color: var(--main);
     color: var(--thir);
+    transition: scale .2s ease-in-out;
+}
+
+.log_info button:hover {
+    cursor: pointer;
+    background-color: #3c746f;
 }
 
 .log_info button p {
@@ -168,6 +174,10 @@ form.container {
     margin-bottom: 10%;
 }
 
+#connect:hover {
+    background-color: #eeeeee;
+}
+
 #connect img {
     width: 20px;
 }
@@ -183,9 +193,38 @@ form.container {
 }
 
 /* responsive */
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
     form.container {
         width: 100vw;
+        box-shadow: none;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    body {
+        display: flex;
+    }
+
+    .banner {
+        display: block;
+        width: 70%;
+        background-color: var(--main);
+        position: relative;
+    }
+
+    .banner img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    form.container {
+        position: relative;
+        transform: translate(0, 0);
+        top: 0;
+        left: 0;
+        height: 100vh;
         box-shadow: none;
     }
 }
