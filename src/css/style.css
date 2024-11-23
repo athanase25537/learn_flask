@@ -16,215 +16,206 @@
 
 body {
     font-family: sans-serif;
+    overflow-x: hidden;
 }
 
-.banner {
-    display: none;
+header {
+    height: 7vh;
+    background-color: var(--main);
+    padding: 5px;
+    border-bottom: 1px solid var(--six);
 }
 
+header i {
+    float: right;
+    color: var(--six);
+    font-size: 35px;
+}
 
-form.container {
+nav {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 70vw;
-    max-width: 450px;
-    min-width: 300px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    height: 95vh;
-    border-radius: 10px;
-    padding: 10px 0;
-}
-
-.log_info {
-    width: 90%;
-    height: 100%;
+    left: 100%;
+    top: 7vh;
+    width: 100%;
+    height: 93vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: var(--main);
+    transition: left .2s ease-in-out;
+    z-index: 3;
+}
+
+nav ul {
+    width: 100%;
+    padding: 0 auto;
+    display: flex;
     flex-direction: column;
-    margin: 0 auto;
+    justify-content: space-between;
+    height: 100%;
+    align-items: center;
+}
+
+nav ul li {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
     gap: 10px;
+    list-style: none;
+    padding: 15px;
+    margin: 0 auto;
+    text-align: center;
+    transition: background .2s ease-in-out;
 }
 
-.log_info .img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    background-image: url('../img/main.png');
-}
-
-.log_info .img img {
+nav div {
     width: 100%;
 }
 
-.log_info h1 {
+nav img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+nav a {
+    width: 100%;
+    color: var(--six);
+    text-decoration: none;
+}
+
+nav li:hover {
+    background-color: #3c746f;
+}
+
+nav.show {
+    left: 0;
+}
+
+form {
+    height: 93vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 5px;
+    padding: 10px 5px;
+}
+
+.text_container {
+    height: 100%;
+    position: relative;
+}
+
+.text_container p {
+    max-width: 80%;
+    padding: 10px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+
+.text_container p.response {
+    background-color: var(--six);
+}
+
+.text_container p.question {
+    color: var(--thir);
+    background-color: var(--main);
+    float: right;
+}
+
+form .end_sms {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5px;
+    gap: 5px;
+    width: 100%;
+}
+
+.end_sms textarea {
+    width: 85vw;
+    border-radius: 20px;
+    height: 5vh;
+    padding: 6px 15px;
+    border: 1px solid var(--main);
+    resize: none;
+}
+
+.end_sms i {
+    font-size: 20px;
+    color: var(--main);
+}
+
+
+.greeting {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    padding: 0 15px;
+    transform: translate(-50%, -50%);
+}
+.text_container h1 {
     background: -webkit-linear-gradient(45deg, var(--four) 5%, var(--sev) 20% , var(--main) 70%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: 600;
     font-size: 1.7em;
+    text-align: center;
 }
 
-.log_info h3 {
+.text_container h3 {
+    text-align: center;
     color: var(--sec);
     font-size: 1em;
     font-weight: 300;
     margin-bottom: 8%;
 }
 
-.log_info div {
-    width: 100%;
-    position: relative;
-}
-
-.log_info div input {
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid var(--main);
-    margin-bottom: 10px;
-}
-
-.log_info div span {
-    position: absolute;
-    top: 10px;
-    left: 8px;
-    background-color: var(--thir);
-    padding: 0 5px;
-    color: var(--sec);
-    transition: top ease-in-out .2s, font-size ease-in-out .2s;
-}
-
-.log_info div label.focus span {
-    top: -8px;
-    font-size: .9em;
-}
-
-.log_info div i {
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    color: var(--fif);
-}
-
-.log_info div i:hover {
-    cursor: pointer;
-}
-
-.log_info .check_container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 8%;
-}
-
-.log_info .check {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    width: 55%;
-    gap: 5px;
-}
-
-.log_info .check input {
-    width: auto;
-    display: inline-block;
-    border-color: var(--main);
-    margin-bottom: 0;
-}
-
-.check_container a {
-    font-size: .9em;
-}
-.log_info button,
-.log_info #connect {
-    display: block;
-    width: 100%;
-    padding: 13px;
-    border-radius: 100px;
-    border: none;
-    text-align: center;
-}
-
-.log_info button {
-    background-color: var(--main);
-    color: var(--thir);
-    transition: scale .2s ease-in-out;
-}
-
-.log_info button:hover {
-    cursor: pointer;
-    background-color: #3c746f;
-}
-
-.log_info button p {
-    font-weight: 500;
-    font-size: large;
-}
-.log_info #connect {
-    background-color: var(--six);
-    text-decoration: none;
-    color: var(--four);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-    margin-bottom: 10%;
-}
-
-#connect:hover {
-    background-color: #eeeeee;
-}
-
-#connect img {
-    width: 20px;
-}
-
-
-
-
-
-
-
-.log_info p {
-    font-size: .9em;
-}
-
 /* responsive */
-@media screen and (max-width: 500px) {
-    form.container {
-        width: 100vw;
-        box-shadow: none;
-    }
-}
-
 @media screen and (min-width: 700px) {
+
     body {
         display: flex;
+        justify-content: center;
+    }
+    header {
+        display: none;
     }
 
-    .banner {
-        display: block;
-        width: 70%;
-        background-color: var(--main);
-        position: relative;
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 50px; 
+      height: 100vh;
     }
 
-    .banner img {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+    nav ul {
+        height: 100%;
+        justify-content: space-between;
     }
 
-    form.container {
-        position: relative;
-        transform: translate(0, 0);
-        top: 0;
-        left: 0;
-        height: 100vh;
-        box-shadow: none;
+    nav li p {
+        display: none;
+    }
+
+    #profile li {
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    form {
+        margin-left: 50px;
+        width: 55vw;
+        max-width: 850px;
+        min-width: 600px;
+    }
+
+    .end_sms svg {
+        width: 50px;
+        height: 50px;
     }
 }

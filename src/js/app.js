@@ -1,26 +1,15 @@
-const inputs = document.querySelectorAll('div input')
-inputs.forEach((input) => {
-    input.addEventListener('focus', function () {
-        this.nextElementSibling.classList.add('focus')
-    })
-
-    input.addEventListener('blur', function () {
-        if(this.value == '') this.nextElementSibling.classList.remove('focus')
-    })
-})
-
-const eye_show = document.getElementById('eye_show')
-const eye_hide = document.getElementById('eye_hide')
-const password = document.getElementById('password')
-eye_hide.style.display = 'none'
-eye_show.onclick = function () {
+const menu_open = document.getElementById('menu_open')
+const menu_close = document.getElementById('menu_close')
+const nav = document.querySelector('nav')
+menu_close.style.display = 'none'
+menu_open.onclick = function () {
     this.style.display = 'none'
-    eye_hide.style.display = 'block'
-    password.setAttribute('type', 'text')
+    menu_close.style.display = 'block'
+    nav.classList.add('show')
 }
 
-eye_hide.onclick = function () {
+menu_close.onclick = function () {
     this.style.display = 'none'
-    eye_show.style.display = 'block'
-    password.setAttribute('type', 'password')
+    menu_open.style.display = 'block'
+    nav.classList.remove('show')
 }
