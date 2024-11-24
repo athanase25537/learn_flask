@@ -1,0 +1,87 @@
+:root {
+    --main: #2D4F4C;
+    --sec: #595454;
+    --thir: #FFF;
+    --four: #252424;
+    --fif: #494646;
+    --six: #F5F5F5;
+    --sev: #E82929;
+}
+
+.response.load {
+    width: 60px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.response.load span {
+    display: inline-block;
+    background-color: #b1adad;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    transition: background .5s ease-in-out;
+}
+
+.response.load span.active {
+    background-color: #353434;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+label i{
+    pointer-events: none;
+}
+
+.preview_container {
+    position: absolute;
+    transform: translate(-9%, -90%);
+    background-color: var(--main);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 5px;
+    border-radius: 10px;
+}
+
+.preview_container .cancel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    position: absolute;
+    right: -15%;
+    top: -20%;
+    background-color: var(--main);
+    width: 30px;
+    height: 30px;
+}
+
+.preview_container .cancel:hover {
+    cursor: pointer;
+}
+
+.preview_container .cancel i {
+    color: white;
+    font-size: 20px;
+}
+
+.preview_container img {
+    border-radius: 5px;
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    object-fit: cover;
+}
+
+.has-img img{
+    width: 100%;
+}
+
+p.has-img {
+    width: 20%;
+}

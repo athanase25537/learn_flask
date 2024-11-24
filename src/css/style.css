@@ -104,12 +104,17 @@ form {
 .text_container {
     height: 100%;
     position: relative;
+    overflow-y: auto;
 }
 
 .text_container p {
     max-width: 80%;
+    width: auto;
     padding: 10px;
     border-radius: 15px;
+}
+
+.text_container div {
     margin-bottom: 10px;
 }
 
@@ -117,10 +122,23 @@ form {
     background-color: var(--six);
 }
 
+.text_container .content_question {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.text_container .content_response {
+    display: flex;
+    justify-content: flex-start;
+}
+
 .text_container p.question {
     color: var(--thir);
     background-color: var(--main);
-    float: right;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
 }
 
 form .end_sms {
@@ -146,6 +164,10 @@ form .end_sms {
     color: var(--main);
 }
 
+.end_sms button {
+    background: none;
+    border: none;
+}
 
 .greeting {
     position: absolute;
@@ -215,7 +237,7 @@ form .end_sms {
     }
 
     .end_sms svg {
-        width: 50px;
-        height: 50px;
+        width: 30px;
+        height: 30px;
     }
 }
