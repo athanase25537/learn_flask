@@ -182,14 +182,18 @@ form.container {
     width: 20px;
 }
 
-
-
-
-
-
-
 .log_info p {
     font-size: .9em;
+}
+
+form.failed input {
+    border-color: #E82929;
+}
+
+#remember.error,
+#username.error,
+#password.error {
+    border-color: #E82929;
 }
 
 /* responsive */

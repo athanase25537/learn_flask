@@ -4,20 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="src/css/login.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
     <title>Talking - Login</title>
 </head>
 <body>
     <div class="banner">
-        <img src="src/img/main.png" alt="">
+        <img src="{{ url_for('static', filename='img/main.png') }}" alt="">
     </div>
 
-    <form action="" method="POST" class="container">
+    <form action="/connect" method="POST" class="container">
         <div class="log_info">
             <div class="img"><img src="src/img/main.png" alt=""></div>
             <h1>Bonjour et Bienvenue</h1>
             <h3>Ajouter les informations utiles</h3>
 
+            {% if 'status' in session %}
+                <p>Nom d'utilisateur ou mot de passe incorrect</p>
+            {% endif %}
             <div>
                 <input type="text" name="username" id="username">
                 <label for="username"><span>Nom d'utilisateur</span></label>
@@ -39,11 +42,11 @@
             </div>
 
             <button><p>Se connecter</p></button>
-            <a id="connect" href="#"><img src="src/img/chercher.png" alt=""><p>Se connecter avec Google</p></a>
+            <a id="connect" href="#"><img src="{{ url_for('static', filename='img/chercher.png') }}" alt=""><p>Se connecter avec Google</p></a>
 
             <p>Vous n'avez pas de compte ? <a href="#">Créez un compte</a></p>
         </div>
     </form>
-    <script src="src/js/app.js"></script>
+    <script src="{{ url_for('static', filename='js/login.js') }}"></script>
 </body>
 </html>

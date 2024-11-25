@@ -3,9 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/chat.css') }}">
+    <title>Talking - Main</title>
 </head>
 <body>
-    <h1>Home Page</h1>
+    <header>
+        <i id="menu_open" class="fa-solid fa-bars"></i>
+        <i style="display: none;" id="menu_close" class="fa-solid fa-xmark"></i>
+    </header>
+    <nav>
+        <ul>
+            <div>
+                <a href="#"><li>
+                    <i class="fa-solid fa-house"></i>
+                    <p>Acceuil</p>
+                </li></a>
+                <a href="#"><li>
+                    <i class="fa-solid fa-plus"></i>
+                    <p>Nouveau</p>
+                </li></a>
+                <a href="#"><li>
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <p>Recherche</p>
+                </li></a>
+            </div>
+            <a id="profile" href="/logout"><li>
+                <img src="{{ url_for('static', filename='img/profile.png') }}" alt="">
+                <p>Se déconnecter</p>
+            </li></a>
+        </ul>
+    </nav>
+
+    <form action="">
+        <div class="text_container">
+            <div class="greeting">
+            <h1>Bonjour {{ username }}, que puis-je faire pour toi aujourd’hui ?</h1>
+                <h3>Avec moi, tu peux demander tout ce que tu veux</h3>
+            </div>
+        </div>
+        <div class="end_sms">
+            <label id="label-file" for="file">
+                <i class="fas fa-paperclip"></i>
+            </label>
+            
+            <input name="file" type="file" id="file">
+
+            <textarea name="sms" id="sms"></textarea>
+
+            <button>
+                <svg width="30" height="30" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 0H50V30C50 41.0457 41.0457 50 30 50H20C8.9543 50 0 41.0457 0 30V0Z" fill="white"/>
+                    <path d="M6.25 41.6667V8.33333L45.8333 25L6.25 41.6667ZM10.4167 35.4167L35.1042 25L10.4167 14.5833V21.875L22.9167 25L10.4167 28.125V35.4167ZM10.4167 35.4167V25V14.5833V21.875V28.125V35.4167Z" fill="#2D4F4C"/>
+                </svg>
+            </button>
+        </div>
+    </form>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/chat.js') }}"></script>
 </body>
 </html>
