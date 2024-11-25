@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
+    <title>Talking - Login</title>
+</head>
+<body>
+    <div class="banner">
+        <img src="{{ url_for('static', filename='img/main.png') }}" alt="">
+    </div>
+
+    <form action="/save" method="POST" id="register" class="container">
+        <div class="log_info">
+            <div class="img"><img src="{{ url_for('static', filename='img/main.png') }}" alt=""></div>
+            <h1>Bonjour et Bienvenue</h1>
+            <h3>Ajouter les informations utiles</h3>
+
+            <div>
+                <input type="text" name="username" id="username">
+                <label for="username"><span>Nom d'utilisateur</span></label>
+            </div>
+
+            <div>
+                <input type="email" name="email" id="email">
+                <label for="email"><span>Email</span></label>
+            </div>
+
+            <div>
+                <input type="password" name="password" id="password">
+                <label for="password"><span>Mot de passe</span></label>
+                <i id="eye_show" class="fa-solid fa-eye"></i>
+                <i id="eye_hide" class="fa-solid fa-eye-slash"></i>
+            </div>
+
+            <div>
+                <input type="password" name="confirm" id="confirm">
+                <label for="confirm"><span>Confirmer mot de passe</span></label>
+                <i id="eye_show_confirm" class="fa-solid fa-eye"></i>
+                <i id="eye_hide_confirm" class="fa-solid fa-eye-slash"></i>
+            </div>
+
+            <button><p>Enregistrer</p></button>
+            <a id="connect" href="#"><img src="{{ url_for('static', filename='img/chercher.png') }}" alt=""><p>Se connecter avec Google</p></a>
+
+            <p>Avez-vous déjà un compte ? <a href="/login">Se connecter</a></p>
+        </div>
+    </form>
+    <script src="{{ url_for('static', filename='js/register.js') }}"></script>
+</body>
+</html>

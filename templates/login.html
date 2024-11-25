@@ -12,15 +12,12 @@
         <img src="{{ url_for('static', filename='img/main.png') }}" alt="">
     </div>
 
-    <form action="/connect" method="POST" class="container">
+    <form action="/connect" method="POST" id="login" class="container">
         <div class="log_info">
-            <div class="img"><img src="src/img/main.png" alt=""></div>
+            <div class="img"><img src="{{ url_for('static', filename='img/main.png') }}" alt=""></div>
             <h1>Bonjour et Bienvenue</h1>
             <h3>Ajouter les informations utiles</h3>
 
-            {% if 'status' in session %}
-                <p>Nom d'utilisateur ou mot de passe incorrect</p>
-            {% endif %}
             <div>
                 <input type="text" name="username" id="username">
                 <label for="username"><span>Nom d'utilisateur</span></label>
@@ -44,7 +41,7 @@
             <button><p>Se connecter</p></button>
             <a id="connect" href="#"><img src="{{ url_for('static', filename='img/chercher.png') }}" alt=""><p>Se connecter avec Google</p></a>
 
-            <p>Vous n'avez pas de compte ? <a href="#">Créez un compte</a></p>
+            <p>Vous n'avez pas de compte ? <a href="/register">Créez un compte</a></p>
         </div>
     </form>
     <script src="{{ url_for('static', filename='js/login.js') }}"></script>

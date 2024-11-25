@@ -163,6 +163,7 @@ form.container {
     font-weight: 500;
     font-size: large;
 }
+
 .log_info #connect {
     background-color: var(--six);
     text-decoration: none;

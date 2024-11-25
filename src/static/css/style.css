@@ -169,6 +169,11 @@ form .end_sms {
     border: none;
 }
 
+.end_sms label:hover,
+.end_sms button:hover {
+    cursor: pointer;
+}
+
 .greeting {
     position: absolute;
     top: 50%;

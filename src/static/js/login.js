@@ -27,7 +27,7 @@ eye_hide.onclick = function () {
 
 const checkbox = document.getElementById('remember')
 const username = document.getElementById('username')
-const form = document.querySelector('form')
+const form = document.querySelector('form#login')
 form.onsubmit = function (e) {
     e.preventDefault()
 
@@ -53,9 +53,7 @@ form.onsubmit = function (e) {
             password.classList.remove('error')
         }
     }
-
-    console.log(cpt)
-
+    
     if(cpt != 0) return
 
     fetch('/connect', {
